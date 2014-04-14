@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>
+      The Little Gem List App
+    </title>
+    
+  </head>
+  <body>
+    <h1>
+      Hello, my name is the Little Gem List App. Here are my favorite gems>
+    </h1>
+    <ul>
+      <% @gems_array.each do |gem|%>
+        <li><%= gem %></li>
+      <% end %>
+    </ul>
+    
+    <h1>You should make a list of your favorite gems too! I even got you started. Now kick it into gear and list some gems!</h1>
+    
+    <ul>
+      <% @three_random_gems.each do |gem| %>
+        <li><%= gem %></li>
+      <% end %>
+      
+      <% @user_gems.each do |gem| %>
+        <li><%= gem %></li>
+      <% end %>
+
+    </ul>
+    <form action="/gems" method="post">
+      <input type="text" id="gem_name" name="gem_name">
+      <input type="submit">
+    </form>
+
+
+
+
+    
+  </body>
+</html>
