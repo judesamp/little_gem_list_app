@@ -1,0 +1,19 @@
+ <div class="jumbotron">
+    <h1>Zen of Gems</h1>
+    <p class="subtitle">Go ahead. List any gems you want. I promise to refrain from commenting on your stupid gems (or face).</p>
+</div>
+
+<div class="marge4">
+  <form action="/zen" method="post">
+    <input type="text" id="gem_name" name="gem_name">
+    <button type="submit" class="btn btn-default btn-lg">Submit</button>
+  </form>
+  <ul class="no_decoration padded">
+        
+    <% @user_gems.each do |gem| %>
+      <li><%= gem %></li>
+    <% end %>
+
+  </ul>
+</div>
+

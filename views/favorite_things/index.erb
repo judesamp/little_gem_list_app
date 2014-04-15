@@ -1,40 +1,68 @@
-<html>
-  <head>
-    <title>
-      The Little Gem List App
-    </title>
-    
-  </head>
-  <body>
-    <h1>
-      Hello, my name is the Little Gem List App. Here are my favorite gems>
-    </h1>
-    <ul>
-      <% @gems_array.each do |gem|%>
-        <li><%= gem %></li>
-      <% end %>
-    </ul>
-    
-    <h1>You should make a list of your favorite gems too! I even got you started. Now kick it into gear and list some gems!</h1>
-    
-    <ul>
-      <% @three_random_gems.each do |gem| %>
-        <li><%= gem %></li>
-      <% end %>
+    <div class="jumbotron">
+      <h1>
+        Hello, I'm the Little Gem List App.
+      </h1>
+      <p>Here are a few of my favorite gems:</p>
+    </div>
+
+        <div class="container">
+          <div class="row gem_list">
+            
+            <div class="listed col-md-4 col-sm-4">
+                <ul class="no_decoration">
+                  <% @gems_array_first_num.each do |gem| %>
+                    <li><%= gem %></li>
+                  <% end %>
+                </ul>
+            </div>
+          
+            <div class="listed col-md-4 col-sm-4">
+              <ul class="no_decoration">
+                <% @gems_array_second_num.each do |gem| %>
+                  <li><%= gem %></li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="listed col-md-4 col-sm-4">
+             <ul class="no_decoration">
+              <% @gems_array_third_num.each do |gem| %>
+                <li><%= gem %></li>
+              <% end %>
+            </ul>
+            </div>
+            
+          </div>
+        </div>
       
-      <% @user_gems.each do |gem| %>
-        <li><%= gem %></li>
-      <% end %>
+    <div class="gray">
+      <div class="marge">
+        <h3>You should make a list of your favorite gems too! I even got you started. Now kick it into gear and list some gems!</h1>
+      </div>
+    </div>
 
-    </ul>
-    <form action="/gems" method="post">
-      <input type="text" id="gem_name" name="gem_name">
-      <input type="submit">
-    </form>
+    <div class="bottom">
+      <div class="marge2">
+        <ul class="no_decoration">
+          <% @three_random_gems.each do |gem| %>
+            <li><%= gem %></li>
+          <% end %>
+          
+          <% @user_gems.each do |gem| %>
+            <li><%= gem %></li>
+          <% end %>
 
+        </ul>
+        
+        <form class="form_grab" action="/gems" method="post">
+          <input type="text" id="gem_name" name="gem_name">
+          <button type="submit" class="btn btn-default btn-lg">Submit</button>
+        </form>
 
+        <p>Click <a href="/zen">here</a> for the zen gem listing experience.</p>
+    </div>
+
+    </div>
 
 
     
-  </body>
-</html>
+ 

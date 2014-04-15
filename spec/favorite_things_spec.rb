@@ -24,7 +24,7 @@ describe GemKeeper do
   end
 
   it "should reject user gem submissions that aren't a part of GemKeeper app" do
-    GemKeeper.add_user_gem('oauth2')
+    GemKeeper.add_user_gem('hammertime')
     GemKeeper.user_gems.should be_empty
   end
 
@@ -33,5 +33,10 @@ describe GemKeeper do
     GemKeeper.add_user_gem('rack')
     second_count = GemKeeper.user_gems.count
     second_count.should be > first_count
+  end
+
+  it "should add everything added via the add_with_zen method" do
+    GemKeeper.add_with_zen('anything')
+    expect(GemKeeper.user_gems.include?('anything')).to eq true
   end
 end
